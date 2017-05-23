@@ -81,7 +81,7 @@ import Prelude hiding (break, drop, dropWhile, foldl, foldr, last, length, map, 
 -- A minimal instance definition must implement 'factors' or 'splitPrimePrefix'. Other methods are provided and should
 -- be implemented only for performance reasons.
 class MonoidNull m => FactorialMonoid m where
-   -- | Returns a list of all prime factors; inverse of mconcat.
+   -- | Returns a list of all prime factors; right inverse of mconcat (@mconcat . factors == id@).
    factors :: m -> [m]
    -- | The prime prefix, 'mempty' if none.
    primePrefix :: m -> m
